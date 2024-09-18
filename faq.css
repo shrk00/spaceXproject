@@ -1,0 +1,190 @@
+ /* -?----universal selector --? */
+ *{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: var(--font);
+  font-weight: 300;
+  font-style: normal;
+  color: #5c5c5c;
+  line-height: 1.65;
+
+ }
+ :root{
+       --bcolor:#000000;
+      --color:#fff;
+      --font:Roboto, sans-serif;
+  } 
+    header{
+      position: sticky;
+     top: 0px;
+     z-index: 1;
+    }
+    
+    a{
+      text-decoration: none;
+    }
+
+@font-face {
+     font-family: myfont;
+     src: url(DIN.ttf.ttf);
+ }
+
+
+/* beginning for navigation  */
+
+.nav{
+ background-color:var(--bcolor);
+ height: 85px;
+ width: 100%;
+ display: flex;
+ align-items: center;
+ text-align: center;
+ text-decoration: none;
+ padding-left: 25px;
+ transition: color .2s ease-in-out;
+ letter-spacing: .1em;
+ 
+}
+
+ul li{
+ display: inline-block;
+ position: relative;
+
+}
+
+ul li a{
+display: block;
+padding: 18px 22px;
+font-size: 15px;
+color: var(--color);
+font-weight:bolder;
+text-decoration: none;
+}
+
+.dropdown li{
+display: block;
+background: var(--bcolor);
+}
+
+.dropdown{
+width: auto;
+position: absolute;
+display: none;
+}
+
+ul li:hover ul.dropdown{
+display: block;
+}
+.side-nav{
+margin-left: 250px;
+}
+.side-nav li a{
+text-transform: uppercase;
+color:  #919191;
+font-family:myfont;
+font-size: 14px;
+padding: 8px;
+}
+.side-nav li a:hover{
+color: var(--color);
+}
+
+
+/*   ============================= --> 
+<!--           MAIN CONTENT        -->
+/* <!-- ============================= --> */
+/* --?------for section part--?------------ */
+/* for header */
+.container{
+    padding: 0 50px;
+}
+.heading{
+   
+    position: relative;
+    margin: 35px 0;
+}
+h1{
+    color: var(--bcolor);
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* for page contain */
+.page-contain{
+  margin: 35px auto;
+  max-width: 680px;
+  margin-bottom: 80px;
+  margin-top: 50px;
+}
+ strong{
+  font-weight: 700;
+ }
+ p{
+  margin-bottom: 1.6em
+
+  
+ }
+
+
+
+/*=?================================ for footer part======================================? */
+
+footer{
+  background: var(--bcolor);
+ padding:75px 0 42px;
+
+   .container{
+     padding:0px 50px;
+    }
+}
+
+.footer1{
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: space-between;
+ margin-left: -40px;
+ margin-right: -40px;
+
+
+    #content{
+     margin-bottom: 46px;
+     margin-left: 38%;
+
+    }
+    
+  
+  .content{
+      color: var(--color);
+     text-decoration: none;
+     list-style-type: none;
+     display: inline-block;
+     margin: 0 8px;
+     cursor: pointer;
+     font-size: 15px;
+     font-family: 'Roboto', sans-serif;
+
+      a{
+         color: var(--color);
+        }
+
+       a:hover{
+          color: #5c5c5c;
+        }
+
+    }
+}
+
+.footer2{
+  margin-top: 80px;
+
+    a{
+     padding-left: 31px;
+     text-decoration: none;
+     font-size: 12px;
+     color: #939393;
+     font-weight: 700;
+     letter-spacing: .1em;
+    
+    }
+}

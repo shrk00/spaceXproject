@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="account.css">
+</head>
+<body>
+  <header>
+      <div class="nav">
+          <li><a href="./index.html"><img src="SpaceX_logo_white_6eaf0441-42af-4396-974e-d6dc2f8ff45c_160x@2x.png" alt="spacexlogo" width="160"></a></li>
+          <ul>
+              <li><a href="#">MENS</a>
+                  <ul class="dropdown">
+                      <li><a href="#">Shirts</a></li>
+                      <li><a href="#">Outwear</a></li>
+                      <li><a href="#">View All</a></li>
+                  </ul>
+              </li>
+              <li><a href="#">WOMENS</a>
+                  <ul class="dropdown">
+                      <li><a href="#">Shirts</a></li>
+                      <li><a href="#">Outwear</a></li>
+                      <li><a href="#">View All</a></li>
+                  </ul>
+              </li>
+              <li><a href="#">KIDS</a>
+                  <ul class="dropdown">
+                      <li><a href="./kid.html">Shirts</a></li>
+                      <li><a href="#">Outwear</a></li>
+                      <li><a href="./kid.html">View All</a></li>
+                  </ul>
+              </li>
+              <li><a href="#">ACCESSORIES</a>
+                  <ul class="dropdown">
+                      <li><a href="./accessories.html">View All</a></li>
+                  </ul>
+              </li>
+          </ul>
+          <ul class="side-nav">
+              <li><a href="./account.html">Account</a></li>
+              <li id="search"><a href="#">search</a></li>
+              <li><a href="./cart.html" style="color: var(--color);">cart (0)</a></li>
+          </ul>
+      </div>
+  </header>
+  <main>
+      <div class="log-container">
+          <div class="page-container">
+              <div class="login">
+                  <h2>LOGIN</h2>
+                  <p>Please enter your e-mail and password:</p>
+              </div>
+              <form id="form">
+                  <div class="form">
+                      <input type="email" id="email" placeholder="Email" required>
+                      <div class="error"></div>
+                  </div>
+                  <div class="form">
+                      <input type="password" placeholder="Password" id="password">
+                      <div class="error"></div>
+                      <button id="forgetButton">forgot password?</button>
+                  </div>
+                  <button class="formbutton" type="submit">login</button>
+              </form>
+              <div class="formhint">
+                  <span>Don't have an account?</span>
+                  <a href="#">Create one</a>
+              </div>
+          </div>
+      </div>
+  </main>
+  <footer>
+      <div class="container">
+          <div class="footer1">
+              <div id="content">
+                  <li class="content"><a href="./faq.html">FAQs</a></li>
+                  <li class="content"><a href="./search.html">Search</a></li>
+                  <li class="content"><a href="#">Privacy Policy</a></li>
+                  <li class="content"><a href="#">Terms & Conditions</a></li>
+              </div>
+          </div>
+          <div class="footer2">
+              <div class="copyright">
+                  <a href="./index.html">&copy; SPACEX STORE</a>
+              </div>
+          </div>
+      </div>
+  </footer>
+  <script>
+      const form = document.getElementById('form');
+      const email = document.getElementById('email');
+      const password = document.getElementById('password');
+
+      form.addEventListener('submit', e => {
+          e.preventDefault();
+          validateInputs();
+      });
+
+      const validateInputs = () => {
+          const emailValue = email.value.trim();
+          const passwordValue = password.value.trim();
+
+          if (emailValue === '') {
+              setError(email, 'Email is required');
+          } else if (!isValidEmail(emailValue)) {
+              setError(email, 'Provide a valid email address');
+          } else {
+              setSuccess(email);
+          }
+
+          if (passwordValue === '') {
+              setError(password, 'Password is required');
+          } else if (passwordValue.length < 8) {
+              setError(password, 'Password must be at least 8 characters');
+          } else {
+              setSuccess(password);
+          }
+      };
+
+      const setError = (element, message) => {
+          const inputControl = element.parentElement;
+          const errorDisplay = inputControl.querySelector('.error');
+
+          errorDisplay.innerText = message;
+          element.classList.add('error');
+          element.classList.remove('success');
+      };
+
+      const setSuccess = (element) => {
+          const inputControl = element.parentElement;
+          const errorDisplay = inputControl.querySelector('.error');
+
+          errorDisplay.innerText = '';
+          element.classList.add('success');
+          element.classList.remove('error');
+      };
+
+      const isValidEmail = (email) => {
+          const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+          return re.test(String(email).toLowerCase());
+      };
+  </script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+#navItemSearch {
+  cursor: pointer;
+}
+
+#searchbarField {
+  display: none;
+}
+
+.t-show {
+  display: block;
+}
